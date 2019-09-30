@@ -25,8 +25,7 @@ jobs:
         fi
 
     - name: Greeting
-      run: go run /test-project/run.go
-
+      run: go run run.go
 
     - name: Build
       run: go build -v .
