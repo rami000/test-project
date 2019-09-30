@@ -24,17 +24,9 @@ jobs:
             dep ensure
         fi
 
-    - name: Build
-      run: go build -v .
-
-  execute:
-    name: Execute
-    runs-on: ubuntu-latest
-    steps:
-    
-
     - name: Greeting
       run: go run /test-project/run.go
 
-    - name: Execute
-      run: go execute -v .
+
+    - name: Build
+      run: go build -v .
