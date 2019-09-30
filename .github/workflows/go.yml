@@ -24,8 +24,5 @@ jobs:
             dep ensure
         fi
 
-    - name: Greeting
-      run: /test-project/run.go
-
     - name: Build
       run: go build -v .
