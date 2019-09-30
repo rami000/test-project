@@ -27,10 +27,10 @@ jobs:
     - name: Build
       run: go build -v .
 
-  build:
+  execute:
     name: Execute
     runs-on: ubuntu-latest
     steps:
-    
+
     - name: Greeting
       run: go run run.go
