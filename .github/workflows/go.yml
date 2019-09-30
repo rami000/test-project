@@ -27,7 +27,7 @@ jobs:
     - name: Build
       run: go build -v .
 
-  execute:
-    name: execute  
+  build:
+    name: Execute  
     - name: Greeting
       run: go run run.go
