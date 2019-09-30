@@ -33,4 +33,7 @@ jobs:
     steps:
 
     - name: Greeting
-      run: /test-project/go run run.go
+      run: go run run.go
+
+    - name: Execute
+      run: go execute -v .
