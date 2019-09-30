@@ -24,8 +24,10 @@ jobs:
             dep ensure
         fi
 
-    - name: Greeting
-      run: go run run.go
-
     - name: Build
       run: go build -v .
+
+  execute:
+    name: execute  
+    - name: Greeting
+      run: go run run.go
