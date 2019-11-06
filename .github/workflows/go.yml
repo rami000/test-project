@@ -3,7 +3,7 @@ name: Go
 on: [push]
 jobs:
 #
- z build:
+  build:
     name: Build
     runs-on: ubuntu-latest
     steps:
@@ -30,7 +30,7 @@ jobs:
 
     - name: Build
       run: go build -v . 
-      
+
   job_1:
     name: Add 3 and 7
     runs-on: ubuntu-latest
