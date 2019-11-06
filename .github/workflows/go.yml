@@ -30,3 +30,13 @@ jobs:
 
     - name: Build
       run: go build -v .
+
+      runs-on: ${{ matrix.os }}
+      strategy:
+        matrix:
+          os: [macOS-10.14, windows-2016, ubuntu-18.04]
+          node: [4, 6, 8, 10]
+          include:
+            - os: windows-2016
+              node: 4
+              npm: 2
