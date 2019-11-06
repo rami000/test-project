@@ -31,8 +31,9 @@ jobs:
     - name: Build
       run: go build -v .
 
-    - name: Build matrix run
-      runs-on: ${{ matrix.os }}`
+
+  name: Build matrix run
+    runs-on: ${{ matrix.os }}`
       strategy:
         matrix:
           os: [macOS-10.14, windows-2016, ubuntu-18.04]
