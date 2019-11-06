@@ -2,8 +2,8 @@
 name: Go
 on: [push]
 jobs:
-
-  build:
+#
+ z build:
     name: Build
     runs-on: ubuntu-latest
     steps:
@@ -29,14 +29,7 @@ jobs:
       run: go run run.go
 
     - name: Build
-      run: go build -v .
-
-  matrix: Build matrix run
-    runs-on: ${{ matrix.os }}`
-      strategy:
-        matrix:
-          os: [macOS-10.14, windows-2016, ubuntu-18.04]
-          node: [4, 6, 8, 10]
+      run: go build -v . 
       
   job_1:
     name: Add 3 and 7
