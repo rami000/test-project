@@ -28,7 +28,7 @@ jobs:
       - shell: bash
         run: |
           value=`cat homework/math-homework.txt`
-          expr $value \* 4 > homework/math-homework.txt
+          expr $value \* 12 > homework/math-homework.txt
       - name: Upload math result for job 2
         uses: actions/upload-artifact@v1
         with:
@@ -61,12 +61,6 @@ jobs:
     - name: Greeting
       run: go run run.go
 
-    - name: Upload golang print result
-        uses: actions/upload-artifact@v1
-        with:
-          name: golang
-          path: homework/golang.go
-          
     - name: Build
       run: go build -v .
 
