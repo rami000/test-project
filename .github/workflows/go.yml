@@ -61,6 +61,12 @@ jobs:
     - name: Greeting
       run: go run run.go
 
+    - name: Upload golang print result
+        uses: actions/upload-artifact@v1
+        with:
+          name: golang
+          path: homework/golang.go
+          
     - name: Build
       run: go build -v .
 
