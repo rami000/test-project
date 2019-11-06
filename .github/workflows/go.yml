@@ -34,10 +34,12 @@ jobs:
         with:
           name: homework
           path: homework/math-homework.txt
-
-  job_4:
+  job_3:
     name: Display results
-    needs: job_3
+    needs: job_2
     runs-on: macOS-latest
     steps:
       - name: Download math result for job 2
+        uses: actions/download-artifact@v1
+        with:
+          name: homework
