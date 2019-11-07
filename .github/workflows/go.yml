@@ -4,32 +4,32 @@ on: [push]
 jobs:
 #
   job_1:
-    name: Add 20 and 7
+    name: job_1 demonstrates the print of a String
     runs-on: ubuntu-latest
     steps:
       - shell: bash
         run: |
-          expr 20 + 7 > math-homework.txt
-      - name: Upload math result for job 1
+          echo "Hello" > math-homework.txt
+      - name: Upload stdout result for job 1
         uses: actions/upload-artifact@v1
         with:
           name: homework
           path: math-homework.txt
  
   job_2:
-    name: Multiply by 12
+    name: job_2 demonstrates the priint of another String value
     needs: job_1
     runs-on: windows-latest
     steps:
-      - name: Download math result for job 1
+      - name: Download data from job_1
         uses: actions/download-artifact@v1
         with:
           name: homework
       - shell: bash
         run: |
           value=`cat homework/math-homework.txt`
-          expr $value \* 12 > homework/math-homework.txt
-      - name: Upload math result for job 2
+          echo $value \+ "World!" > homework/math-homework.txt
+      - name: Upload string result for Job2
         uses: actions/upload-artifact@v1
         with:
           name: homework
@@ -44,30 +44,4 @@ jobs:
         with:
           name: homework
 
-          name: Example Caching with npm
-
 on: push
-
-
-  build:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v1
-
-    - name: Cache node modules
-      uses: actions/cache@v1
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-
-    - name: Install Dependencies
-      run: npm install
-    
-    - name: Build
-      run: npm run build
-
-    - name: Test
-      run: npm run test
