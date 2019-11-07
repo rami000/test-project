@@ -8,8 +8,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-16.04, ubuntu-18.04]
-        node: [60, 8, 10]
+        os: [ubuntu-16.04, ubuntu-18.04, macos-latest, windows-latest]
+        node: [1, 2, 3, 4]
     steps:
       - shell: bash
         run: |
