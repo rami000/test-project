@@ -17,7 +17,7 @@ jobs:
           path: string-print.txt
  
   job_2:
-    name: job_2 demonstrates the priint of another String value
+    name: job_2 demonstrates the print of another String value
     needs: job_1
     runs-on: windows-latest
     steps:
@@ -27,7 +27,7 @@ jobs:
           name: stringPrint
       - shell: bash
         run: |
-          value=`cat string1/string-print.txt`
+          value=`cat stringPrint/string-print.txt`
           echo $value "World!" > stringPrint/string-print.txt
       - name: Upload string result for Job2
         uses: actions/upload-artifact@v1
