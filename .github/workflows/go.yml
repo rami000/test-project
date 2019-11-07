@@ -10,6 +10,7 @@ jobs:
       matrix:
         os: [ubuntu-16.04, ubuntu-18.04, macos-latest, windows-latest]
         node: [1, 2, 3, 4]
+        gender: [male, female]
     steps:
       - shell: bash
         run: |
