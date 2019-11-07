@@ -9,12 +9,12 @@ jobs:
     steps:
       - shell: bash
         run: |
-          echo "Hello" > math-homework.txt
+          echo "Hello" > string-print.txt
       - name: Upload stdout result for job 1
         uses: actions/upload-artifact@v1
         with:
-          name: homework
-          path: math-homework.txt
+          name: stringPrint
+          path: string-print.txt
  
   job_2:
     name: job_2 demonstrates the priint of another String value
@@ -24,16 +24,16 @@ jobs:
       - name: Download data from job_1
         uses: actions/download-artifact@v1
         with:
-          name: homework
+          name: stringPrint
       - shell: bash
         run: |
-          value=`cat homework/math-homework.txt`
-          echo $value "World!" > homework/math-homework.txt
+          value=`cat string1/string-print.txt`
+          echo $value "World!" > stringPrint/string-print.txt
       - name: Upload string result for Job2
         uses: actions/upload-artifact@v1
         with:
-          name: homework
-          path: homework/math-homework.txt
+          name: stringPrint
+          path: stringPrint/string-print.txt
   job_3:
     name: Display results
     needs: job_2
@@ -42,4 +42,4 @@ jobs:
       - name: Download math result for job 2
         uses: actions/download-artifact@v1
         with:
-          name: homework
+          name: stringPrint
