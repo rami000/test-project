@@ -28,7 +28,7 @@ jobs:
       - shell: bash
         run: |
           value=`cat homework/math-homework.txt`
-          echo $value \+ "World!" > homework/math-homework.txt
+          echo $value $ "World!" > homework/math-homework.txt
       - name: Upload string result for Job2
         uses: actions/upload-artifact@v1
         with:
