@@ -5,7 +5,11 @@ jobs:
 #
   job_1:
     name: job_1 demonstrates the print of a String
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-16.04, ubuntu-18.04]
+        node: [6, 8, 10]
     steps:
       - shell: bash
         run: |
@@ -66,3 +70,10 @@ jobs:
 
     - name: Test
       run: npm run test
+
+
+      runs-on: ${{ matrix.os }}
+strategy:
+  matrix:
+    os: [ubuntu-16.04, ubuntu-18.04]
+    node: [6, 8, 10]
