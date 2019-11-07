@@ -35,11 +35,11 @@ jobs:
           name: stringPrint
           path: stringPrint/string-print.txt
   job_3:
-    name: Display results
+    name: Display output
     needs: job_2
     runs-on: macOS-latest
     steps:
-      - name: Download math result for job 2
+      - name: Download output 
         uses: actions/download-artifact@v1
         with:
           name: stringPrint
