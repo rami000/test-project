@@ -1,4 +1,4 @@
-#modified v2
+#modified
 name: Go
 on: [push]
 jobs:
